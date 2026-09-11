@@ -1,9 +1,9 @@
 # Compliance Monitor
 
-A backend service, written in Go, that checks financial transactions
+A backend service written in Go, that checks financial transactions
 for suspicious patterns in real time.
 
-**This is a simulation not a certified compliance product, and it doesn't use real sanctions or
+**-- This is a simulation not a certified compliance product, and it doesn't use real sanctions or
 watchlist data.**
 
 **Status: runs locally, tested and working. Not yet deployed. Data is
@@ -13,8 +13,8 @@ stored in memory only, so it resets when the server restarts.**
 
 Banks and financial companies are required to watch transactions for
 money laundering and fraud, and report anything suspicious. This
-project is a simplified version of that kind of system — it doesn't
-handle real money or connect to any real bank, but it checks synthetic
+project is a simplified version of that kind of system. It doesn't 
+handle real money or connect to any real bank, but it checks synthetic 
 transactions using the same kinds of patterns real systems look for.
 
 ## What it does
