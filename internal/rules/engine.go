@@ -105,6 +105,15 @@ func (r VelocityRule) Evaluate(tx models.Transaction, history []models.Transacti
 	stddev := math.Sqrt(variance)
 
 	if stddev == 0 {
+		if float64(tx.Amount) != mean {
+			return Result{
+				Flagged: true,
+				RuleName: r.Name(),
+				Severity: "medium",
+				Reason: fmt.Sprintf("amount %.2f deviates from a perfect uniform %d-transaction history of %.2f",
+				float64(tx.Amount), len(amounts), mean),
+			}
+		}
 		return Result{RuleName: r.Name()}
 	}
 
