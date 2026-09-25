@@ -19,6 +19,7 @@ type API struct {
 }
 
 func (a *API) Routes(mux *http.ServeMux) {
+	mux.HandleFunc("GET /", a.Dashboard)
 	mux.HandleFunc("POST /transactions", a.ingestTransaction)
 	mux.HandleFunc("GET /alerts", a.listAlerts)
 	mux.HandleFunc("POST /alerts/{id}/resolve", a.resolveAlert)
